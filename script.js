@@ -42,7 +42,7 @@ const questions = [
     {
         question: "Avant d’être rappeur, Luidji était :",
         choices: ["Routier", "Infirmier", "Au chômage"],
-        correct: 2
+        correct: 1
     },
     {
         question: "Dans la chanson Palace Mafia, que célèbre Luidji ?",
@@ -52,7 +52,7 @@ const questions = [
     {
         question: "Dans Tu le mérites, qu’apprend-on sur la fille au téléphone rose ?",
         choices: ["C’est la sœur de Luidji", "C’est elle qui a fait le voice tag « Foufoune Palace, bonjour »", "On n’apprend rien sur elle"],
-        correct: 2
+        correct: 1
     },
     {
         question: "Quelle est la date de sortie de Tristesse Business : Saison 1 ?",

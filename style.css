@@ -1,11 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #344123; /* Couleur de fond modifiée */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
+    height: 100vh; /* Utilisé pour centrer le contenu sur toute la page */
 }
 
 .quiz-container {
@@ -15,7 +16,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
+    margin-bottom: 40px; /* Ajout d'un écart entre le contenu et le footer */
 }
+
 
 button {
     background-color: #4CAF50;
@@ -59,4 +62,49 @@ button:hover {
 #score-container {
     margin-top: 20px;
     font-size: 1.2em;
+}
+
+.titrepage {
+    position: relative;
+    width: 100%;
+    height: 110px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Écart réduit entre le logo et le haut de la page */
+}
+
+
+
+.titrepage img {
+    max-width: 220px; /* Taille réduite du logo */
+    height: auto;
+}
+
+footer {
+    display: flex;
+    background-color: #1A230F;
+    border-top: 1px solid #ffffff;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+footer .info {
+    max-width: 800px;
+    width: 100%;
+}
+
+footer a {
+    color: #4CAF50; /* Couleur de l'URL */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
