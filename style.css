@@ -83,11 +83,9 @@ button:hover {
 
 footer {
     display: flex;
-    background-color: #1A230F;
-    border-top: 1px solid #ffffff;
     justify-content: center;
-    padding: 20px 0;
-    margin: 30px;
+    padding: 10px 0; /* Réduit le padding pour moins d'espace vertical */
+    margin: 10px 0;  /* Réduit la marge en bas */
     position: relative;
     bottom: 0;
     width: 100%;
@@ -95,3 +93,13 @@ footer {
     font-size: 0.9em;
     text-align: center;
 }
+
+/* Media query pour mobile */
+@media (max-width: 600px) {
+    footer {
+        padding: 5px 0; /* Réduit encore plus le padding sur les petits écrans */
+        margin: 5px 0;  /* Réduit la marge pour les petits écrans */
+        font-size: 0.8em; /* Réduit la taille de la police sur mobile */
+    }
+}
+
