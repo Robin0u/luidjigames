@@ -103,3 +103,16 @@ footer {
     }
 }
 
+.feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.feedback.good {
+    color: #4CAF50;
+}
+
+.feedback.bad {
+    color: #f44336;
+}

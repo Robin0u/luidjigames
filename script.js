@@ -90,6 +90,9 @@ function loadQuestion() {
 
     const questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = `<h2>${question.question}</h2>`;
+    document.getElementById("feedback").innerText = "";
+    document.getElementById("feedback").className = "feedback";
+
 
     question.choices.forEach((choice, index) => {
         const choiceButton = document.createElement("div");
@@ -106,16 +109,23 @@ function selectAnswer(selectedIndex, correctIndex, choiceElement, choices) {
     const choiceButtons = document.querySelectorAll('.choice');
     choiceButtons.forEach(button => button.onclick = null);
 
+    const feedback = document.getElementById("feedback");
+
     if (selectedIndex === correctIndex) {
         choiceElement.classList.add("correct");
         score++;
+        feedback.innerText = "Bonne réponse";
+        feedback.className = "feedback good";
     } else {
         choiceElement.classList.add("incorrect");
+        feedback.innerText = "Mauvaise réponse";
+        feedback.className = "feedback bad";
     }
 
     document.getElementById("score").innerText = score;
     document.getElementById("next-button").disabled = false;
 }
+
 
 function nextQuestion() {
     currentQuestionIndex++;
