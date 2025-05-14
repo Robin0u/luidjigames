@@ -91,7 +91,61 @@ const questions = [
             "sur mon destin"
         ],
         correct: 1
-    },        
+    },
+    {
+        question: "Complète : 'J'aimerais tellement te prêter mes yeux / Que tu puisses voir...'",
+        choices: [
+            "le vide qu’il y a autour de nous", 
+            "le feu qui sommeille en toi", 
+            "la haine que tu caches au fond de toi"
+        ],
+        correct: 1
+    },
+    {
+        question: "Complète : 'Je sais que d'avoir ta mère contre-toi / C'est plus dur...'",
+        choices: [
+            "que d’avoir personne autour de toi", 
+            "que de vivre dans le froid", 
+            "que d’avoir le monde contre-toi"
+        ],
+        correct: 2
+    },
+    {
+        question: "Complète : 'Elle m'a dit s'te plaît baby, viens on s'arrête / Je crois qu'on va toucher...'",
+        choices: [
+            "le bout du paquet", 
+            "l’filtre de la cigarette", 
+            "le feu de la planète"
+        ],
+        correct: 1
+    },
+    {
+        question: "Complète : 'Pour arrêter d'y penser, j’me dis qu’elle se fait déglinguer / Par un mec...'",
+        choices: [
+            "au hasard qu’elle aurait croisé sur sa route", 
+            "de son passé qu’elle revoit quand elle doute", 
+            "du quartier qui la voit comme un atout"
+        ],
+        correct: 0
+    },
+    {
+        question: "Complète : 'Peut-être qu'elle se sert de moi pour oublier son ex, hein / Mais j'me suis servi d'elle...'",
+        choices: [
+            "pour combler mon stress, hein", 
+            "pour terminer mon texte, hein", 
+            "pour zapper mon ex, hein"
+        ],
+        correct: 1
+    },
+    {
+        question: "Complète : 'Tu vas adorer mon côté malsain / Genre j'te tiens par l'épaule...'",
+        choices: [
+            "je te pelote le sein", 
+            "j’te glisse dans mes refrains", 
+            "je t’emmène dans mon train"
+        ],
+        correct: 0
+    },                 
 ];
 
 let score = 0;
