@@ -58,12 +58,49 @@ const questions = [
         question: "Quelle est la date de sortie de Tristesse Business : Saison 1 ?",
         choices: ["26 avril 2019", "24 avril 2019", "21 avril 2019"],
         correct: 0
+    },
+    {
+        question: "Quand est né Luidji ?",
+        choices: ["21 janvier 1992", "22 janvier 1991", "22 juillet 1991"],
+        correct: 1
     }
 ];
 
 let score = 0;
 let currentQuestionIndex = 0;
 let usedQuestions = [];
+
+function showIntro() {
+    const questionContainer = document.getElementById("question-container");
+    const nextButton = document.getElementById("next-button");
+    const feedback = document.getElementById("feedback");
+    document.getElementById("score-container").style.display = "none";
+
+    questionContainer.innerHTML = `
+        <h2>LuidjiGames - Quiz</h2>
+        <p class="intro-desc">
+            Teste tes connaissances sur Luidji avec ce quiz exclusif : un format ludique en 5 questions pour (re)découvrir son parcours et ses morceaux.
+        </p>
+        <h3>Règles du jeu :</h3>
+        <ul class="rules">
+            <li>Le quiz contient 5 questions sélectionnées aléatoirement.</li>
+            <li>Une seule réponse possible par question.</li>
+            <li>Tu vois immédiatement si ta réponse est bonne ou mauvaise.</li>
+            <li>À la fin, tu découvriras ton score sur 5.</li>
+        </ul>
+        <button id="start-button" class="start-btn">Commencer le quiz</button>
+    `;
+
+    feedback.innerText = "";
+    nextButton.style.display = "none";
+
+    // Ajouter un bouton pour démarrer le quiz
+    const startBtn = document.getElementById("start-button");
+    startBtn.onclick = () => {
+        nextButton.style.display = "inline-block";
+        startQuiz();
+    };
+}
 
 function startQuiz() {
     score = 0;
@@ -72,6 +109,8 @@ function startQuiz() {
     document.getElementById("score").innerText = score;
     document.getElementById("next-button").innerText = "Suivant";
     loadQuestion();
+    document.getElementById("score-container").style.display = "block";
+
 }
 
 function loadQuestion() {
@@ -79,6 +118,8 @@ function loadQuestion() {
         displayFinalScore();
         return;
     }
+
+    document.getElementById("feedback").innerText = "";  // Vider le message à chaque nouvelle question
 
     let randomIndex;
     do {
@@ -90,9 +131,6 @@ function loadQuestion() {
 
     const questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = `<h2>${question.question}</h2>`;
-    document.getElementById("feedback").innerText = "";
-    document.getElementById("feedback").className = "feedback";
-
 
     question.choices.forEach((choice, index) => {
         const choiceButton = document.createElement("div");
@@ -124,8 +162,12 @@ function selectAnswer(selectedIndex, correctIndex, choiceElement, choices) {
 
     document.getElementById("score").innerText = score;
     document.getElementById("next-button").disabled = false;
-}
 
+    // Effacer le message après quelques secondes
+    setTimeout(() => {
+        feedback.innerText = "";
+    }, 2000);  // Message disparaît après 2 secondes
+}
 
 function nextQuestion() {
     currentQuestionIndex++;
@@ -135,12 +177,34 @@ function nextQuestion() {
 
 function displayFinalScore() {
     const questionContainer = document.getElementById("question-container");
-    questionContainer.innerHTML = `<h2>Vous avez répondu à 5 questions !</h2><p>Score final : ${score}/5</p>`;
+    questionContainer.innerHTML = `
+        <h2>Vous avez répondu à 5 questions !</h2>
+        <p>Score final : ${score}/5</p>
+    `;
 
     const nextButton = document.getElementById("next-button");
     nextButton.innerText = "Rejouer";
     nextButton.disabled = false;
     nextButton.onclick = restartQuiz;
+
+    // Ajouter le bouton Retour au menu
+    const menuButton = document.createElement("button");
+    menuButton.innerText = "Retour au menu";
+    menuButton.onclick = () => {
+        window.location.href = "https://robin0u.github.io/LuidjiActus/";
+    };
+    menuButton.style.marginTop = "10px";
+    menuButton.style.backgroundColor = "#333";
+    menuButton.style.color = "white";
+    menuButton.style.border = "none";
+    menuButton.style.padding = "10px 20px";
+    menuButton.style.borderRadius = "5px";
+    menuButton.style.cursor = "pointer";
+
+    questionContainer.appendChild(menuButton);
+
+    // Vider le message de feedback à la fin
+    document.getElementById("feedback").innerText = "";
 }
 
 function restartQuiz() {
@@ -152,4 +216,4 @@ function restartQuiz() {
     loadQuestion();
 }
 
-window.onload = startQuiz;
+window.onload = showIntro;

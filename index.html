@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icone.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="titrepage">
@@ -18,18 +23,22 @@
     <div class="quiz-container">
         <div id="question-container"></div>
         <div id="feedback" class="feedback"></div>
+        <div id="feedback-message"></div>
         <button id="next-button" onclick="nextQuestion()" disabled>Suivant</button>
         <div id="score-container">
-            <p>Score: <span id="score">0</span>/5</p>
-        </div>
+            Score : <span id="score">0</span>
+          </div>
+          
     </div>
     <script src="script.js"></script>
 
     <footer>
+        <div class="info">
             <p>Ce site est à but non lucratif. <br>
                 Ce site n'est pas associé à Luidji ni à aucune personne de son entourage. <br>
                 Site réalisé par <a href="https://www.instagram.com/luidjiactus/" target="_blank" style="color:white"> @LuidjiActus.</a> <br>
                 ©2024 LuidjiActus.</p>
+        </div>
     </footer>
     
 </body>

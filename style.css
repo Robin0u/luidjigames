@@ -116,3 +116,35 @@ footer {
 .feedback.bad {
     color: #f44336;
 }
+
+.info {
+	border-top: 2px solid white; /* Bordure blanche */
+	font-family: "Jockey One", sans-serif;
+	color: #ffffff;
+	font-size: 15px;
+	text-align: center;
+	width: 100%;
+}
+
+.intro-desc {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.rules {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.start-btn {
+    margin-top: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
