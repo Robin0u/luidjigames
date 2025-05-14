@@ -63,12 +63,41 @@ const questions = [
         question: "Quand est né Luidji ?",
         choices: ["21 janvier 1992", "22 janvier 1991", "22 juillet 1991"],
         correct: 1
-    }
+    },
+    {
+        question: "Complète : 'J’la trouve moins belle que la veille, moins belle que la veille, elle est toujours belle...'",
+        choices: ["mais pas pareille", "juste moins belle que la veille", "quand elle me surveille"],
+        correct: 1
+    },
+    {
+        question: "Complète : 'Les semaines passent et je suis, rongé par mes torts, rongé par...'",
+        choices: ["le remord", "le décor", "son regard"],
+        correct: 0
+    },
+    {
+        question: "Complète : 'J'nage dans les foufounes, marée haute, marée basse / Quatre culs dans la chambre...'",
+        choices: [
+            "j'cherche encore mon as", 
+            "j’ai mon carré d'as", 
+            "j’ai cassé les glaces"
+        ],
+        correct: 1
+    },
+    {
+        question: "Complète : 'Avec elles j'fais le mec busy, elles ont le cœur sur la main / Mais la main...'",
+        choices: [
+            "sur ma main", 
+            "sur trop de zizis", 
+            "sur mon destin"
+        ],
+        correct: 1
+    },        
 ];
 
 let score = 0;
 let currentQuestionIndex = 0;
 let usedQuestions = [];
+let isQuizOver = false; // Ajout d'un flag pour savoir si le quiz est terminé
 
 function showIntro() {
     const questionContainer = document.getElementById("question-container");
@@ -79,7 +108,7 @@ function showIntro() {
     questionContainer.innerHTML = `
         <h2>LuidjiGames - Quiz</h2>
         <p class="intro-desc">
-            Teste tes connaissances sur Luidji avec ce quiz exclusif : un format ludique en 5 questions pour (re)découvrir son parcours et ses morceaux.
+            Teste tes connaissances sur Luidji avec ce quiz exclusif.
         </p>
         <h3>Règles du jeu :</h3>
         <ul class="rules">
@@ -103,24 +132,25 @@ function showIntro() {
 }
 
 function startQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
-    usedQuestions = [];
+    score = 0;  // Réinitialiser le score
+    currentQuestionIndex = 0; // Réinitialiser l'index des questions
+    usedQuestions = []; // Réinitialiser les questions utilisées
+    isQuizOver = false;  // Réinitialiser le flag de fin de quiz
     document.getElementById("score").innerText = score;
     document.getElementById("next-button").innerText = "Suivant";
     loadQuestion();
     document.getElementById("score-container").style.display = "block";
-
 }
 
 function loadQuestion() {
-    if (currentQuestionIndex >= 5) {
+    if (usedQuestions.length >= 5) {
         displayFinalScore();
         return;
     }
+
     document.getElementById("feedback").innerText = "";
-    document.getElementById("feedback").className = "";    
-    document.getElementById("feedback").innerText = "";  // Vider le message à chaque nouvelle question
+    document.getElementById("feedback").className = "";
+    document.getElementById("feedback").innerText = "";
 
     let randomIndex;
     do {
@@ -166,12 +196,15 @@ function selectAnswer(selectedIndex, correctIndex, choiceElement, choices) {
 }
 
 function nextQuestion() {
-    currentQuestionIndex++;
-    document.getElementById("next-button").disabled = true;
-    loadQuestion();
+    if (isQuizOver) {
+        restartQuiz(); // Si le quiz est terminé, on redémarre
+    } else {
+        loadQuestion(); // Sinon, on charge une nouvelle question
+    }
 }
 
 function displayFinalScore() {
+    isQuizOver = true;
     const questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = `
         <h2>Vous avez répondu à 5 questions !</h2>
@@ -181,9 +214,15 @@ function displayFinalScore() {
     const nextButton = document.getElementById("next-button");
     nextButton.innerText = "Rejouer";
     nextButton.disabled = false;
-    nextButton.onclick = restartQuiz;
 
-    // Ajouter le bouton Retour au menu
+    // Très important : au lieu de changer juste le texte, on remet un nouveau comportement au bouton
+    nextButton.onclick = () => {
+        restartQuiz();
+        nextButton.innerText = "Suivant";
+        nextButton.onclick = nextQuestion; // remettre le comportement normal
+    };
+
+    // Ajouter le bouton retour au menu
     const menuButton = document.createElement("button");
     menuButton.innerText = "Retour au menu";
     menuButton.onclick = () => {
@@ -199,17 +238,25 @@ function displayFinalScore() {
 
     questionContainer.appendChild(menuButton);
 
-    // Vider le message de feedback à la fin
     document.getElementById("feedback").innerText = "";
 }
 
+
 function restartQuiz() {
+    // Réinitialisation complète du jeu
     score = 0;
     currentQuestionIndex = 0;
     usedQuestions = [];
+    isQuizOver = false; // Réinitialiser le flag de fin de quiz
     document.getElementById("score").innerText = score;
     document.getElementById("next-button").innerText = "Suivant";
     loadQuestion();
 }
 
-window.onload = showIntro;
+window.onload = () => {
+    showIntro();
+
+    const nextButton = document.getElementById("next-button");
+    nextButton.onclick = nextQuestion;
+};
+
