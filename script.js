@@ -118,7 +118,8 @@ function loadQuestion() {
         displayFinalScore();
         return;
     }
-
+    document.getElementById("feedback").innerText = "";
+    document.getElementById("feedback").className = "";    
     document.getElementById("feedback").innerText = "";  // Vider le message à chaque nouvelle question
 
     let randomIndex;
@@ -162,11 +163,6 @@ function selectAnswer(selectedIndex, correctIndex, choiceElement, choices) {
 
     document.getElementById("score").innerText = score;
     document.getElementById("next-button").disabled = false;
-
-    // Effacer le message après quelques secondes
-    setTimeout(() => {
-        feedback.innerText = "";
-    }, 2000);  // Message disparaît après 2 secondes
 }
 
 function nextQuestion() {
