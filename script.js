@@ -145,7 +145,125 @@ const questions = [
             "je t’emmène dans mon train"
         ],
         correct: 0
-    },                 
+    },
+    {
+    question: "Quel est le nom du label fondé par Luidji ?",
+    choices: ["Foufoune Palace", "La Capsule", "Le Singe Fume"],
+    correct: 0,
+    },               
+    {
+    question: "Dans quel album trouve-t-on le morceau 'Femme flic' ?",
+    choices: ["Tristesse Business : Saison 1", "Saison 00", "Boscolo Exedra"],
+    correct: 0,
+    },
+    {
+    question: "Dans quel album trouve-t-on le morceau 'Femme flic' ?",
+    choices: ["Tristesse Business : Saison 1", "Saison 00", "Boscolo Exedra"],
+    correct: 0,
+    },
+    {
+    question: "Quel est le nom de la première mixtape de Luidji sortie en 2009 ?",
+    choices: ["Freshness", "Deux mille douze", "Station 999"],
+    correct: 0,
+    },
+    {
+    question: "Quel EP Luidji sort-il en 2012 ?",
+    choices: ["Foufoune Palace #1", "Deux mille douze", "Mécanique des fluides"],
+    correct: 1,
+    },
+    {
+    question: "Chez quel label Luidji a-t-il sorti 'Station 999' et 'Mécanique des fluides' ?",
+    choices: ["Capitol", "Wagram Music", "Universal"],
+    correct: 1,
+    },
+    {
+    question: "Pourquoi Luidji quitte-t-il Wagram Music en 2017 ?",
+    choices: [
+        "Il voulait arrêter la musique",
+        "Il s’est disputé avec son manager",
+        "Il voulait devenir indépendant",
+    ],
+    correct: 2,
+    },
+    {
+    question: "Quel est le nom du label fondé par Luidji ?",
+    choices: ["Palace Music", "Foufoune Palace Records", "Tristesse Records"],
+    correct: 1,
+    },
+    {
+    question: "Quel est le premier album studio de Luidji ?",
+    choices: [
+        "Saison 00",
+        "Tristesse Business : Saison 1",
+        "Boscolo Exedra",
+    ],
+    correct: 1,
+    },
+    {
+    question: "Dans quelle série américaine le morceau 'Vent d’hiver' de Luidji est-il diffusé ?",
+    choices: ["Euphoria", "Power", "Ballers"],
+    correct: 2,
+    },
+    {
+    question: "Quel projet marque le retour de Luidji en 2023 ?",
+    choices: ["Boscolo Exedra", "Saison 00", "Marie-Jeanne"],
+    correct: 1,
+    },
+    {
+    question: "Combien de temps Luidji est-il resté sans sortir de morceau entre 2020 et 2022 ?",
+    choices: ["1 an", "2 ans", "3 ans"],
+    correct: 1,
+    },
+    {
+    question: "Quel morceau de 'Saison 00' a connu un grand succès sur TikTok ?",
+    choices: ["Alexis", "Le Rouge", "Miskine"],
+    correct: 0,
+    },
+    {
+    question: "En quelle année Luidji commence-t-il à écrire ses premiers textes ?",
+    choices: ["À 13 ans", "À 15 ans", "À 17 ans"],
+    correct: 1,
+    },
+    {
+    question: "Quel est le premier projet musical publié par Luidji ?",
+    choices: ["Deux mille douze", "Freshness", "Station 999"],
+    correct: 1,
+    },
+    {
+    question: "En quelle année sort son premier EP 'Deux mille douze' ?",
+    choices: ["2012", "2013", "2014"],
+    correct: 0,
+    },
+    {
+    question: "Quelle formation Luidji commence-t-il après son bac scientifique ?",
+    choices: ["Une école de commerce", "Une licence d’informatique", "Un BTS audiovisuel"],
+    correct: 1,
+    },
+    {
+    question: "En quelle année Luidji signe-t-il chez Wagram Music ?",
+    choices: ["2012", "2014", "2016"],
+    correct: 1,
+    },
+    {
+    question: "Quel projet marque sa rupture avec Wagram Music en 2017 ?",
+    choices: ["Mécanique des fluides", "Foufoune Palace", "Système"],
+    correct: 1,
+    },
+    {
+    question: "Quel est le premier projet publié sous son label Foufoune Palace Records ?",
+    choices: ["Saison 00", "Foufoune Palace #1", "Boscolo Exedra"],
+    correct: 1,
+    },
+    {
+    question: "En quelle année sort son premier album studio ?",
+    choices: ["2019", "2020", "2021"],
+    correct: 0,
+    },
+    {
+    question: "Quel est le dernier projet majeur de Luidji en date (2023) ?",
+    choices: ["Tristesse Business : Saison 1", "Saison 00", "Foufoune Palace #2"],
+    correct: 1,
+    },
 ];
 
 let score = 0;
