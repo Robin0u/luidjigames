@@ -431,4 +431,3 @@ window.onload = () => {
     const nextButton = document.getElementById("next-button");
     nextButton.onclick = nextQuestion;
 };
-
