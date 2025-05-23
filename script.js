@@ -284,10 +284,10 @@ function showIntro() {
         </p>
         <h3>Règles du jeu :</h3>
         <ul class="rules">
-            <li>Le quiz contient 5 questions sélectionnées aléatoirement.</li>
+            <li>Le quiz contient 10 questions sélectionnées aléatoirement.</li>
             <li>Une seule réponse possible par question.</li>
             <li>Tu vois immédiatement si ta réponse est bonne ou mauvaise.</li>
-            <li>À la fin, tu découvriras ton score sur 5.</li>
+            <li>À la fin, tu découvriras ton score sur 10.</li>
         </ul>
         <button id="start-button" class="start-btn">Commencer le quiz</button>
     `;
@@ -315,7 +315,7 @@ function startQuiz() {
 }
 
 function loadQuestion() {
-    if (usedQuestions.length >= 5) {
+    if (usedQuestions.length >= 10) {
         displayFinalScore();
         return;
     }
@@ -379,8 +379,9 @@ function displayFinalScore() {
     isQuizOver = true;
     const questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = `
-        <h2>Vous avez répondu à 5 questions !</h2>
-        <p>Score final : ${score}/5</p>
+        <h2>Vous avez répondu à 10 questions !</h2>
+        <p>Score final : ${score}/10 <br> <br>
+        N'oublie pas de partager ton résultat sur insta ;)</p>
     `;
 
     const nextButton = document.getElementById("next-button");
